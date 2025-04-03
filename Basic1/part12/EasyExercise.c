@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 void printElement(int* arr, int size){
 
     for(int i=0; i<size;i++){
@@ -39,6 +39,14 @@ int main(){
     int arrSize =sizeof(numArr)/sizeof(numArr[0]);
     printElement(pNumArr,arrSize);
     printf("\n");
+
+    // Easy question 5
+    int anArr[]={1,2,3,4,5};
+    int* ptr;
+    ptr= (int*) malloc(sizeof(anArr));
+    ptr=anArr;
+    printf("The address of 1st element = %p",ptr);
+    printf("The first element = %d ",*ptr);
     
     return 0;
 }
