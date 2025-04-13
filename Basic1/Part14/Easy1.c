@@ -62,7 +62,7 @@ int main(){
     //Allocating memory for n students of type struct pointer
     struct Student* students =(struct Student*)malloc(n*(sizeof(struct Student)));
 
-    //Safety if malloc doesnt work and allocate address
+    //Safety if malloc doesnt work and allocateY address
     if(students==NULL){
         printf("Memory allocation failed!\n");
         return 1;
