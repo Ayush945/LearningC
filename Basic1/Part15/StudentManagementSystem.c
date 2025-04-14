@@ -44,20 +44,91 @@ struct Student* AddStudent(int n){
 void DisplayStudent(struct Student* students,int n){
 
     for(int i=0; i<n;i++){
-        printf("\nDetail of student %d is:\n Name = %s, Age = %d",students[i].id,students[i].name,students[i].age);
+        printf("\nDetail of student %d is:\nName = %s , Age = %d",students[i].id,students[i].name,students[i].age);
+    }
+}
+
+struct Course* AddCourse(int n){
+
+    struct Course* courses= (struct Course*)malloc(n*(sizeof(struct Course)));
+    for(int i=0; i<n;i++){
+
+        printf("\nEnter the detail for course %d",i+1);
+        courses[i].id=i+1;
+        printf("\nEnter the course's name : ");
+        scanf("%s",courses[i].name);
+        printf("\nEnter the course's credit hour: ");
+        scanf("%d",&courses[i].credit_hours);
+    }
+    return courses;
+}
+
+void DisplayCourse(struct Course* courses, int n ){
+    
+    for(int i=0;i<n;i++){
+        printf("\nDetail of course %d is:\nName = %s , credit hour = %d",courses[i].id,courses[i].name,courses[i].credit_hours);
     }
 }
 
 int main(){
 
-    int numberOf;
-    printf("\nEnter the number of students: ");
-    scanf("%d",&numberOf);
+    int choice;
+    printf("\n\n\t\t****Welcome to University Dashboard****\n\n");
+    printf("For Student Service: 1\n");
+   
     
-    struct Student* students=AddStudent(numberOf);
-    DisplayStudent(students,numberOf);
+    printf("For Course: 2 \n");
+    printf("For Enrollment: 3 \n");
+    printf("To exit: 4\n");
+    printf("\nEnter your Choice: ");
+    scanf("%d",&choice);
+
+    switch(choice){
+        case 1:
+            printf("\n\n\nInside Student service\n");
+            printf("To add student: 1 \n");
+            printf("To display student: 2 \n");
+            printf("\nEnter your Choice: ");
+            scanf("%d",&choice);
+            break;
+        case 2:
+            printf("\n\n\nInside Course\n");
+            printf("To add course: 1 \n");
+            printf("To display: 2 \n");
+            printf("\nEnter your Choice: ");
+            scanf("%d",&choice);
+            break;
+        case 3:
+            printf("\n\n\nInside Enrollment\n");
+            break;
+        case 4:
+            exit(1);
+        default:
+            exit(1);
+
+    }
+    // int numberOfStudents,numberOfCourses;
+
+
+    // printf("\nEnter the number of students: ");
+    // scanf("%d",&numberOfStudents);
     
-    free(students);
+    // struct Student* students=AddStudent(numberOfStudents);
+    // DisplayStudent(students,numberOfStudents);
+
+    // printf("\n\n");
+    // printf("\nEnter the number of Courses: ");
+    // scanf("%d",&numberOfCourses);
+
+    // struct Course* courses=AddCourse(numberOfCourses);
+    // DisplayCourse(courses,numberOfCourses);
+    
+    
+    // free(students);
+    // free(courses);
+    
+ 
+    
     //Add Student
     //View All Students
     //Exit
