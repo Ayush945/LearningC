@@ -71,42 +71,98 @@ void DisplayCourse(struct Course* courses, int n ){
 }
 
 int main(){
-
-    int choice;
-    printf("\n\n\t\t****Welcome to University Dashboard****\n\n");
-    printf("For Student Service: 1\n");
-   
+    struct Student* students = NULL;
+    struct Course* courses = NULL;
+    int numberOfStudents = 0, numberOfCourses = 0;
+    int mainChoice;
     
-    printf("For Course: 2 \n");
-    printf("For Enrollment: 3 \n");
-    printf("To exit: 4\n");
-    printf("\nEnter your Choice: ");
-    scanf("%d",&choice);
+   do{
 
-    switch(choice){
-        case 1:
-            printf("\n\n\nInside Student service\n");
-            printf("To add student: 1 \n");
-            printf("To display student: 2 \n");
-            printf("\nEnter your Choice: ");
-            scanf("%d",&choice);
-            break;
-        case 2:
-            printf("\n\n\nInside Course\n");
-            printf("To add course: 1 \n");
-            printf("To display: 2 \n");
-            printf("\nEnter your Choice: ");
-            scanf("%d",&choice);
-            break;
-        case 3:
-            printf("\n\n\nInside Enrollment\n");
-            break;
-        case 4:
-            exit(1);
-        default:
-            exit(1);
+        printf("\n\n\t\t****Welcome to University Dashboard****\n\n");
+        printf("For Student Service: 1\n");
+        printf("For Course: 2 \n");
+        printf("For Enrollment: 3 \n");
+        printf("To exit: 4\n");
+        printf("\nEnter your Choice: ");
+        scanf("%d",&mainChoice);
 
-    }
+    
+        switch(mainChoice){
+            case 1: {
+                int studentChoice;
+                do {
+                    printf("\n\n-- Student Services --\n");
+                    printf("1. Add Student\n");
+                    printf("2. Display Students\n");
+                    printf("3. Go Back\n");
+                    printf("Enter your choice: ");
+                    scanf("%d", &studentChoice);
+
+                    switch (studentChoice) {
+                        case 1:
+                            printf("Enter number of students to add: ");
+                            scanf("%d", &numberOfStudents);
+                            if (students) free(students); // avoid memory leak
+                            students = AddStudent(numberOfStudents);
+                            break;
+                        case 2:
+                            if (students)
+                                DisplayStudent(students, numberOfStudents);
+                            else
+                                printf("No students to display.\n");
+                            break;
+                        case 3:
+                            break; // Go back
+                        default:
+                            printf("Invalid choice.\n");
+                    }
+                } while (studentChoice != 3);
+                break;
+            }
+            case 2: {
+                int courseChoice;
+                do {
+                    printf("\n\n-- Course Management --\n");
+                    printf("1. Add Course\n");
+                    printf("2. Display Courses\n");
+                    printf("3. Go Back\n");
+                    printf("Enter your choice: ");
+                    scanf("%d", &courseChoice);
+
+                    switch (courseChoice) {
+                        case 1:
+                            printf("Enter number of courses to add: ");
+                            scanf("%d", &numberOfCourses);
+                            if (courses) free(courses); // avoid memory leak
+                            courses = AddCourse(numberOfCourses);
+                            break;
+                        case 2:
+                            if (courses)
+                                DisplayCourse(courses, numberOfCourses);
+                            else
+                                printf("No courses to display.\n");
+                            break;
+                        case 3:
+                            break; // Go back
+                        default:
+                            printf("Invalid choice.\n");
+                    }
+                } while (courseChoice != 3);
+                break;
+            }
+            case 3:
+                printf("Enrollment functionality not implemented yet.\n");
+                break;
+
+            case 4:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice.\n");
+
+        }
+    }while (mainChoice!=4);
+    
     // int numberOfStudents,numberOfCourses;
 
 
@@ -124,8 +180,8 @@ int main(){
     // DisplayCourse(courses,numberOfCourses);
     
     
-    // free(students);
-    // free(courses);
+    free(students);
+    free(courses);
     
  
     
