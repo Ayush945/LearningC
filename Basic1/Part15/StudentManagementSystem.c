@@ -70,6 +70,21 @@ void DisplayCourse(struct Course* courses, int n ){
     }
 }
 
+struct Enrollment* EnrollStudentInCourse(int studentId,int courseId){
+    
+    //Enter student Id
+    //Check if such student exists
+    //Enter course id to enroll
+    //Check if such course exists
+    //If both exists then map them and store it
+    return NULL;
+}
+
+void DisplayStudentEnrollment(){
+    //Display all students in a course.
+    //Check all courses enrolled by a student.
+}
+
 int main(){
     struct Student* students = NULL;
     struct Course* courses = NULL;
@@ -102,7 +117,7 @@ int main(){
                         case 1:
                             printf("Enter number of students to add: ");
                             scanf("%d", &numberOfStudents);
-                            if (students) free(students); // avoid memory leak
+                            if (students) free(students);
                             students = AddStudent(numberOfStudents);
                             break;
                         case 2:
@@ -112,7 +127,7 @@ int main(){
                                 printf("No students to display.\n");
                             break;
                         case 3:
-                            break; // Go back
+                            break;
                         default:
                             printf("Invalid choice.\n");
                     }
@@ -133,7 +148,7 @@ int main(){
                         case 1:
                             printf("Enter number of courses to add: ");
                             scanf("%d", &numberOfCourses);
-                            if (courses) free(courses); // avoid memory leak
+                            if (courses) free(courses);
                             courses = AddCourse(numberOfCourses);
                             break;
                         case 2:
@@ -143,7 +158,7 @@ int main(){
                                 printf("No courses to display.\n");
                             break;
                         case 3:
-                            break; // Go back
+                            break;
                         default:
                             printf("Invalid choice.\n");
                     }
@@ -151,7 +166,30 @@ int main(){
                 break;
             }
             case 3:
-                printf("Enrollment functionality not implemented yet.\n");
+                int enrollmentChoice,studentId,courseId;
+                do{
+                    printf("\n\n-- Enrollment --\n");
+                    printf("1. Enroll in a course\n");
+                    printf("2. Display Student's course\n");
+                    printf("3. Go Back\n");
+                    printf("Enter your choice: ");
+                    scanf("%d", &enrollmentChoice); 
+                    
+                    switch(enrollmentChoice){
+                        case 1:
+                            printf("\n\nTo enroll enter student's ID and Course's ID\n");
+                            printf("Enter the student's ID:");
+                            scanf("%d",&studentId);
+                            printf("\nEnter the course's ID:");
+                            scanf("%d",&courseId);
+                            EnrollStudentInCourse(studentId,courseId);
+                        case 2:
+                            break;
+                        default:
+                        printf("\nInvalid choice");
+                    }
+
+                }while(enrollmentChoice!=3);
                 break;
 
             case 4:
@@ -163,30 +201,7 @@ int main(){
         }
     }while (mainChoice!=4);
     
-    // int numberOfStudents,numberOfCourses;
-
-
-    // printf("\nEnter the number of students: ");
-    // scanf("%d",&numberOfStudents);
-    
-    // struct Student* students=AddStudent(numberOfStudents);
-    // DisplayStudent(students,numberOfStudents);
-
-    // printf("\n\n");
-    // printf("\nEnter the number of Courses: ");
-    // scanf("%d",&numberOfCourses);
-
-    // struct Course* courses=AddCourse(numberOfCourses);
-    // DisplayCourse(courses,numberOfCourses);
-    
-    
     free(students);
     free(courses);
-    
- 
-    
-    //Add Student
-    //View All Students
-    //Exit
     return 0;
 }
