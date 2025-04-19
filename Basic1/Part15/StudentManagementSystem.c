@@ -70,6 +70,7 @@ void DisplayCourse(struct Course* courses, int n ){
     }
 }
 
+//For enrollment neeed to see list/data structure
 struct Enrollment* EnrollStudentInCourse(int studentId,int courseId){
     
     //Enter student Id
