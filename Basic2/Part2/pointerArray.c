@@ -2,7 +2,7 @@
 
 
 
-int main(){
+int main(){~
     char name[20];
     char* pName=name; // Pointer to beginning of the array
     char ch;
