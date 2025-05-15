@@ -9,6 +9,7 @@ int main(){
     printf("\nThe third element:  %d",*(*(array+1)));
     printf("\nThe fourth element: %d",*(*(array+1)+1));
 
+    // Now lets study others
 
     return 0;
 }
