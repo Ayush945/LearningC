@@ -19,5 +19,7 @@ path(X,Y):- connected(X,Y);connected(X,Z),connected(Z,Y).
 likes(john, books).
 likes(mary, music).
 likes(john, mary).
+likes(mary, books).
 
 %Define a predicate common_interest(X, Y) that is true if X and Y like at least one common thing.
+common_interest(X,Y):- likes(X,Z),likes(Y,Z).
