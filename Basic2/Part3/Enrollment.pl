@@ -10,5 +10,5 @@ enrolled(kiko,cs301).
 
 teaches(P, S) :- instructor(P, C), enrolled(S, C).
 
-%      Testing
+% Testing
 % 1. enrolled(kevin,ee222)
