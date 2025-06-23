@@ -36,7 +36,20 @@ void Print(){//print all elements in the list
 }
 
 void Delete(int n){//delete node at positio n
-    printf("%d",n);
+    struct Node* temp1=head;
+
+    if(n==1){
+        head=temp1->next;
+        free(temp1);
+        return;
+    }
+    //for n-1 position
+    for(int i=0;i<n-2;i++){
+        temp1=temp1->next;
+    }
+    struct Node* temp2=temp1->next;
+    temp1->next=temp2->next;
+    free(temp2);
 }
 
 int main(){
@@ -53,7 +66,7 @@ int main(){
     printf("Enter a position: ");
     scanf("%d",&n);
     printf("\n");
-    //Delete(n);
+    Delete(n);
     Print();
 
     return 0;
