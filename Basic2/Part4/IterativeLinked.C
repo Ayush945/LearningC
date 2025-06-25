@@ -25,9 +25,20 @@ void Print(){
     printf("\n");
 }
 
-void PrintReverse(){
-    struct Node* temp=head;
-}
+void Reverse(){
+    struct Node *current, *prev, *next;
+    current=head;
+    prev=NULL;
+
+    while(current!=NULL){
+        next=current->next;
+        current->next=prev; // *(current).next=prev;
+        prev=current;
+        current=next;
+    }
+    head=prev;
+
+}   
 int main(){
     head=NULL;
     Insert(2);
@@ -37,6 +48,7 @@ int main(){
     Insert(6); //List is 6,5,4,3,2
     Print(); //List is 6,5,4,3,2
     printf("\n");
-    PrintReverse(); //List is 2,3,4,5,6
+    Reverse(); //List is 2,3,4,5,6
+    Print();
     return 0;
 }
