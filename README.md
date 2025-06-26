@@ -38,11 +38,4 @@ This is a private, educational project. Over time, I plan to:
 
 ## 📁 Structure Overview
 
-algorithms-in-c-and-prolog/
-├── C/
-│ ├── basic1/
-│ ├── basic2/
-│ └── data_structures/
-├── Prolog/
-│ └── predicates/
-└── README.md
+<pre> ```text algorithms-in-c-and-prolog/ ├── C/ │ ├── basics/ │ └── data_structures/ ├── Prolog/ │ └── predicates/ └── README.md ``` </pre>
