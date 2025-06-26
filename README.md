@@ -36,3 +36,13 @@ This is a private, educational project. Over time, I plan to:
 - Apply more math-based logic and reasoning
 - Organize the code into categories with clear documentation
 
+## 📁 Structure Overview
+
+algorithms-in-c-and-prolog/
+├── C/
+│ ├── basic1/
+│ ├── basic2/
+│ └── data_structures/
+├── Prolog/
+│ └── predicates/
+└── README.md
