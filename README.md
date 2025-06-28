@@ -35,7 +35,3 @@ This is a private, educational project. Over time, I plan to:
 - Add more algorithm implementations
 - Apply more math-based logic and reasoning
 - Organize the code into categories with clear documentation
-
-## 📁 Structure Overview
-
-<pre> ```text algorithms-in-c-and-prolog/ ├── C/ │ ├── basics/ │ └── data_structures/ ├── Prolog/ │ └── predicates/ └── README.md ``` </pre>

@@ -11,31 +11,93 @@ struct Node* head;
 
 // Add a number to linked list at last position
 void Insert(int num){
+    struct Node* temp=(struct Node*)malloc(sizeof(struct Node));
+    temp->data=num;
+    temp->next=NULL;
+    if(head==NULL){
+        head=temp;
+        return;
+    }
+    struct Node* temp1=head;
 
+    while(temp1->next!=NULL){
+        temp1=temp1->next;
+    }
+    temp1->next=temp;
 }
 
 // Add a number to linked list at first position
 void InsertAtHead(int num){
-
+    struct Node* temp=(struct Node*)malloc(sizeof(struct Node));
+    temp->data=num;
+    temp->next=head;
+    head=temp;
 }
 
 // Add a number to linked list at n position
 void InsertAtNPosition(int num,int pos){
-
+    struct Node* temp=(struct Node*)malloc(sizeof(struct Node));
+    temp->data=num;
+    temp->next=NULL;
+    if(pos==1){
+        temp->next=head;
+        head=temp;
+        return;
+    }
+    struct Node* temp1;
+    temp1=head;
+    for(int i=0;i<pos-2;i++){
+        temp1=temp1->next;
+    }
+    temp->next=temp1->next;
+    temp1->next=temp;
 }
 
 // Delete a number from linked list at n position
 void DeleteByPosition(int pos){
+    if(pos==1){
+        struct Node* temp=head;
+        head=temp->next;
+        free(temp);
+        return;
+
+    }
+    struct Node* temp=head;
+    for (int i=0;i<pos-2;i++){
+        temp=temp->next;
+    }
+    struct Node* temp1=temp->next;
+    temp->next=temp1->next;
+    free(temp1);
 
 }
 
+// Delete by number in linked list;
 void DeleteTheNumber(int num){
+    struct Node* temp=head;
+    if(temp->data==num){
+        head=temp->next;
+        free(temp);
+        return;
+    }
 
+    while (temp->data!=num){
+        temp=temp->next;
+    }
+    struct Node* temp1=temp->next;
+    if(temp1->next==NULL){
+        temp->next=NULL;
+        free(temp1);
+        return;
+    }
+    temp->next=temp1->next;
+    free(temp1);
 }
 
 // Reverse Linked List
-void Reverse(){
-
+void ReverseWithLoop(){
+    struct Node* prev, *current, *next;
+    
 }
 
 // Print Linked List
@@ -52,16 +114,17 @@ void Print(){
 int main(){
     head=NULL;
     int choice,num,pos,exitFlag=0;
+    printf("\n1. Insert number at last of linked list.");
+    printf("\n2. Insert number at beginning of linked list.");
+    printf("\n3. Insert number at nth place in linked list.");
+    printf("\n4. Delete a number by position");
+    printf("\n5. Delete the number.");
+    printf("\n6. Reverse the linked list");
+    printf("\n7. Display linked list");
+    printf("\n8. Exit");
     
-    while(!exitFlag){
-        printf("\n1. Insert number at last of linked list.");
-        printf("\n2. Insert number at beginning of linked list.");
-        printf("\n3. Insert number at nth place in linked list.");
-        printf("\n4. Delete a number by position");
-        printf("\n5. Delete the number.");
-        printf("\n6. Reverse the linked list");
-        printf("\n7. Exit");
-        printf("\n\nPlease choose any one of the option: ");
+    while(exitFlag!=1){
+        printf("\n\nPlease choose any one of the option (1-8): ");
         scanf("%d",&choice);
         switch(choice){
 
@@ -93,12 +156,12 @@ int main(){
                 DeleteTheNumber(num);
                 break;
             case 6:
-                Reverse();
+                ReverseWithLoop();
                 break;
             case 7:
                 Print();
                 break;   
-            case 7: 
+            case 8: 
                 exitFlag=1;
                 break;
             default:
