@@ -27,5 +27,11 @@ void Print(){
 struct Node* head;
 int main(){
     head=NULL;
+    Insert(5);
+    Insert(4);
+    Insert(3);
+    Insert(2);
+    Insert(1);
+    Insert(0);
     return 0;
 }
