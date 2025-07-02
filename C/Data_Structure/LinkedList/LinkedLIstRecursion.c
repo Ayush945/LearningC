@@ -24,6 +24,10 @@ void Print(){
     printf("\n");
 }
 
+void ReverseRecursion(){
+    struct Node* temp=head;
+}
+
 struct Node* head;
 int main(){
     head=NULL;
