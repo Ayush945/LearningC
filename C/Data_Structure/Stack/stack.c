@@ -3,5 +3,6 @@
 
 int main(){
 
+    printf("Stack");
     return 0;
 }
