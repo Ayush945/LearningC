@@ -4,5 +4,6 @@
 int main(){
 
     printf("Stack");
+    printf("Hello stack");
     return 0;
 }
