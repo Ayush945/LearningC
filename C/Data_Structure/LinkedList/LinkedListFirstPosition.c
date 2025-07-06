@@ -1,3 +1,5 @@
+/** Add node from head */
+
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,3 +1,12 @@
+/** A program which enables multiple action to be commited on a single linked list
+    Add in Nth position
+    Add from Head
+    Delete based on Nth position
+    Delete based on value
+    Print the linked List
+    Reverse linked list
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

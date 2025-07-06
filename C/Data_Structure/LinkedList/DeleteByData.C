@@ -1,3 +1,5 @@
+/*** Delete Linked List based on the value.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 

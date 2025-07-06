@@ -1,3 +1,5 @@
+/** Linked list without any function */
+
 #include <stdio.h>
 #include <stdlib.h>
 

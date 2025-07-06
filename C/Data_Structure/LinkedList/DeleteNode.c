@@ -1,3 +1,6 @@
+/** Delete a node from linked list on Nth position*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
