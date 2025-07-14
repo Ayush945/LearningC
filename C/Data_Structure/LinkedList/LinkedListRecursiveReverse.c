@@ -27,8 +27,15 @@ void Insert(int n){
     temp1->next = temp;
 }
 
-void ReverseLinkedListRecursion(){
-
+void ReverseLinkedListRecursion(struct Node* p){
+    if(p->next==NULL){
+        head=p;
+        return;
+    }
+    ReverseLinkedListRecursion(p->next);
+    struct Node* q=p->next;
+    q->next=p;
+    p->next=NULL;
 }
 
 void PrintLinkedList(){
@@ -50,7 +57,7 @@ int main(){
     Insert(4);
     Insert(5);
     PrintLinkedList();
-    //ReverseLinkedListRecursion();
+    ReverseLinkedListRecursion(head);
     PrintLinkedList();
     
     return 0;
