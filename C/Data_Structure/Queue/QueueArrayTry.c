@@ -1,3 +1,5 @@
+//Implementation of Queue with circular array
+
 #include <stdio.h>
 #define MAX_SIZE 5
 int Que[MAX_SIZE];
