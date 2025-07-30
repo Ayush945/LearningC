@@ -22,6 +22,9 @@ This is a personal project to explore and implement classic and advanced algorit
 #### 🔹 Data Structures
 - Dynamic Arrays
 - Linked Lists
+- Stacks
+- Queues
+- Trees
 
 ### 📗 In Prolog
 
