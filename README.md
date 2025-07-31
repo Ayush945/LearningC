@@ -20,7 +20,6 @@ This is a personal project to explore and implement classic and advanced algorit
 - Dynamic Memory Allocation
 
 #### 🔹 Data Structures
-- Dynamic Arrays
 - Linked Lists
 - Stacks
 - Queues
