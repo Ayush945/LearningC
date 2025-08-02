@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 struct Node{
     int data;
     struct Node* left;
@@ -17,17 +17,39 @@ struct Node* GetNode(int data){
 
 
 void Insert(int data){
+
+    struct Node* newNode = GetNode(data);
     if(root==NULL){
-        root=GetNode(data);
+        root=newNode;
         return;
     }
-    struct Node* temp=GetNode(data);
-    if(root->data<=temp->data){
-        root->left=Insert(data);
-    }   
+    struct Node* current=root;
+    struct Node* parent=NULL;
+    
+    while(current!=NULL){
+        parent=current;
+        if(data<=current->data){
+            current=current->left;
+        }
+        else{
+            current=current->right;
+        }
+    }
+
+    if(data<parent->data){
+        parent->left=newNode;
+    }
     else{
-        root->right=Insert(data);
-    } 
+        parent->right=newNode;
+    }
+}
+
+void Traversal(struct Node* node){
+    if(node!=NULL){
+        Traversal(node->left);
+        printf("%d",node->data);
+        Traversal(node->right);
+    }
 }
 
 
@@ -36,5 +58,10 @@ int main(){
     Insert(5);
     Insert(2);
     Insert(10);
+    Insert(1);
+    Insert(8);
+    Insert(90);
+    Traversal(root);
+    printf("\n");
     return 0;
 }
