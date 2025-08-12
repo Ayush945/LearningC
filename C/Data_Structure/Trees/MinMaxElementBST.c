@@ -1,6 +1,8 @@
+/* Min and Max element of Tree.*/
 #include <stdio.h>
 #include <stdlib.h>
 
+//Node structure for tree
 struct BstNode{
     int data;
     struct BstNode* left;
