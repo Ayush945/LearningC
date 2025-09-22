@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define MAX(a,b) ((a)>(b) ? (a):(b))
 
+// Finding height
 
 struct Node{
     
